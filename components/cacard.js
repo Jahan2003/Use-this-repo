@@ -1,7 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React,{Component} from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-// import { withNavigation } from 'react-navigation';
 import Calendar from './EventCalendar';
 
 
@@ -11,7 +10,7 @@ function Cacard(props){
     return(
         <View>
             <TouchableOpacity onPress={()=>navigation.navigate(props.Name)}>
-             <View>
+             <View style={styles.cacard}>
                <View style={styles.cards}></View>
                <View style={styles.text}><Text style={styles.cname}>{props.text}</Text></View>
              </View>
@@ -62,6 +61,9 @@ const styles=StyleSheet.create({
    },
    cname:{
     color:'white'
+   },
+   cacard:{
+    marginRight:4,
    }
 });
 // export default withNavigation(Calendar);

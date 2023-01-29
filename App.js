@@ -28,6 +28,7 @@ import ODList from './components/odlist';
 import Fpass from './components/forgotPass';
 import Stuatt from './components/StuAtt';
 import Page2 from './components/page2';
+import Attendance from './components/Attendance';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -59,6 +60,7 @@ const MyStack = () => {
         <Stack.Screen name="Calendar" component={Calendar} />
         <Stack.Screen name="On-duty Request" component={ODList}/>
         <Stack.Screen name="ForgetPassword" component={Fpass}/>
+        <Stack.Screen name="Attendance" component={Attendance}/>
         
       </Stack.Navigator>
     </NavigationContainer>

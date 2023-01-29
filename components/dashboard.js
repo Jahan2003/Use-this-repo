@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, TextInput, View ,Pressable} from 'react-native';
 import { ScrollView } from 'react-native';
 import Cacard from './cacard';
+import Attendance from './Attendance';
 import Remcard from './remcard';
 export default class Dboard extends Component {
   constructor(props){
@@ -19,6 +20,7 @@ export default class Dboard extends Component {
   render(){
 
     return (
+      <ScrollView style={styles.scroll}>
       <View style={styles.container}>
       <Pressable style={styles.account}></Pressable>
       <View style={styles.container2}>
@@ -26,12 +28,21 @@ export default class Dboard extends Component {
       <Text style={styles.bell}><MaterialCommunityIcons name="bell" style={{fontSize:30}}></MaterialCommunityIcons></Text></View>
       <View style={styles.welcome}><Text style={styles.wel}>Welcome John</Text></View>
       <View style={styles.search}><TextInput style={styles.input} placeholder='Search Events, onduty..'></TextInput></View>
-      <View style={styles.headb}><Text style={styles.head} >Categories</Text>
+      <View style={styles.headb}><Text style={styles.head} >Monitoring</Text>
+      <Text style={styles.see}>See All</Text></View>
+      <View style={styles.cards}>
+        {/* <Cacard text={'Events'} Name={'Calendar'}/> */}
+        <Cacard text={'On-Duty'} Name={'On-duty Request'} />
+        <Cacard text={'Attendance'} Name={'Attendance'} />
+         {/* <Cacard text={'Assignments'} Name={''}/> */}
+      </View>
+      <View style={styles.headb}><Text style={styles.head} >Activities</Text>
       <Text style={styles.see}>See All</Text></View>
       <View style={styles.cards}>
         <Cacard text={'Events'} Name={'Calendar'}/>
-        <Cacard text={'On-Duty'} Name={'On-duty Request'} />
-        <Cacard text={'Assignments'} Name={''}/>
+        <Cacard text={'Achievements'} Name={''} />
+        <Cacard text={'To-do List'} Name={''} />
+         {/* <Cacard text={'Assignments'} Name={''}/> */}
       </View>
       <View style={styles.headb}><Text style={styles.head}>Remainders</Text>
       <Text style={styles.see}>See All</Text>
@@ -43,16 +54,20 @@ export default class Dboard extends Component {
       </ScrollView>
 </View>
 </View>
+</ScrollView>
   );
 }
 }
 
 const styles = StyleSheet.create({
+  scroll:{
+    flex:1,
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
     flexDirection:'row',
-    marginTop:-30
+    marginTop:-40
   },
   account:{
     height:50,
@@ -83,11 +98,11 @@ const styles = StyleSheet.create({
     
   },
   welcome:{
-    marginTop:40,
+    marginTop:30,
     marginLeft:-50
   },
   wel:{
-    fontSize:30,
+    fontSize:28,
     fontFamily:'sans-serif-medium',
     fontWeight:'bold',
     paddingLeft:10
@@ -122,7 +137,8 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     marginTop:30,
     marginLeft:-40,
-    justifyContent:'space-evenly'
+    
+    // justifyContent:'space-evenly'
     
   },
   remcard:{
