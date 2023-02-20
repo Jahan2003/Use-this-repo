@@ -1,7 +1,7 @@
 import { View } from "react-native";
-function Attendance(){
+function AllEvents(){
   return(
     <View></View>
   );
 }
-export default Attendance;
+export default AllEvents;

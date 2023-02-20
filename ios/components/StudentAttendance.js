@@ -1,7 +1,7 @@
 import { View } from "react-native";
-function Attendance(){
+function StudentAttendance (){
   return(
     <View></View>
   );
 }
-export default Attendance;
+export default StudentAttendance ;
